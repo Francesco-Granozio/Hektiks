@@ -5,10 +5,10 @@ It has been realized for the Web Programming Exam along with @[sl1mSha4dey](http
 # Preview
 Here is a little preview of the homepage of the website. (A live demo is on his way).
 <div text-align="center">
-  <img src="https://github.com/Francesco-Granozio/Hektiks/blob/main/preview/homepage.png" alt="hektiks preview"/>
+  <img src="[https://github.com/Francesco-Granozio/Hektiks/blob/main/preview/homepage.png](https://github.com/Francesco-Granozio/Hektiks/blob/main/prewiew/homepage.png)" alt="hektiks preview"/>
 </div>
 <div text-align="center">
-  <img src="https://github.com/Francesco-Granozio/Hektiks/blob/main/preview/login.png" alt="hektiks preview"/>
+  <img src="[https://github.com/Francesco-Granozio/Hektiks/blob/main/preview/login.png](https://github.com/Francesco-Granozio/Hektiks/blob/main/prewiew/homepage.png)" alt="hektiks preview"/>
 </div>
 
 ## Tecnologies Used
