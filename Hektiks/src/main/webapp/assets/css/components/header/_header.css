@@ -1,0 +1,200 @@
+/* HEADER */
+header {
+    background-color: var(--header-bg);
+    min-height: 7.5vh;
+    width: 100%;
+    position: fixed;
+    z-index: 8;
+}
+
+header nav {
+    width: 90%;
+    min-height: inherit;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+}
+
+#logo {
+    color: var(--orange);
+    font-family: "Lobster", "Source Code Pro", sans-serif;
+}
+
+header #burger {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+header #burger .line {
+    display: block;
+    padding: 0.2rem 2rem;
+    background-color: white;
+    transition: all 200ms ease;
+}
+
+header #burger .line:nth-child(2) {
+    margin: 0.5rem 0;
+}
+
+header #burger:hover .line {
+    background-color: var(--orange);
+}
+
+/* Animazione/Transizione quando clicchi sul burger, diventa una X */
+#burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translateY(300%);
+}
+
+#burger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-300%);
+}
+
+/* CARRELLO */
+.cart {
+    font-size: calc(1.4em + 1vmin);
+    color: white;
+    cursor: pointer;
+    margin-right: 2rem;
+    z-index: 9;
+}
+
+.cart a {
+    transition: color 200ms ease;
+    position: relative;
+}
+
+.cart:hover {
+    color: var(--yellow);
+}
+/* Icona che mostra la quantità di giochi nel carrello */
+.caret {
+    position: absolute;
+    top: -20%;
+    right: -25%;
+    background-color: var(--orange);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 0 0.175rem;
+    transition: all 100ms ease;
+}
+
+#cart:hover a > .caret {
+    color: var(--orange);
+    background-color: white;
+}
+
+/* LOGIN */
+#login-container {
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+/* Username e saldo utente */
+#user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    color: white;
+}
+
+#user-balance {
+    font-weight: bold;
+    color: var(--orange);
+}
+
+/* immagine profilo utente */
+#login-container > img {
+    max-width: 22%;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 2rem;
+    aspect-ratio: 1;
+}
+
+/* SEARCH BAR */
+/* search bar nell'header e nella pagina di mostra tutti nel mobile */
+.search-bar {
+    position: relative;
+    flex-basis: 40%;
+    padding: 1rem 0;
+}
+
+.search-bar > input {
+    border-radius: 90px;
+}
+
+.search-bar > span {
+    color: var(--light-grey);
+    font-size: calc(0.9em + 1vmin);
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 1300px) {
+    #user-info { /*saldo e username*/
+        display: none;
+    }
+
+    #login-container > img {
+        max-width: 35%;
+    }
+}
+
+/*immagine profilo*/
+@media only screen and (max-width: 1000px) {
+    #login-container > img {
+        max-width: 40%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #login-container > img {
+        max-width: 45%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #login-container > img {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #login-container > img {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 471px) {
+    #mobile-search-bar { /*nasconde la search bar da mobile */
+        display: none;
+    }
+}
+
+/* ricerca mobile. Nascondi la searchbar nell'header e mostra la searchbar in 'mostra tutti'*/
+@media only screen and (max-width: 470px) {
+    nav .search-bar {
+        display: none;
+    }
+
+    #mobile-search-bar {
+        display: block;
+    }
+}

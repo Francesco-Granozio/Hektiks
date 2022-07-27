@@ -1,0 +1,365 @@
+.game-presentation {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+/* L'immagine di copertina del gioco */
+.banner > img {
+    border-radius: 10px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Dove sta il titolo, prezzo, sconto, quantità e bottoni del gioco*/
+form {
+    width: 65%;
+}
+
+/* Contenuto del form */
+.game-card {
+    width: 100%;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+/* Informazioni sulla quantità del gioco */
+.subinfos {
+    width: 40%;
+    margin: auto;
+    background-color: rgba(16, 16, 16, 0.3);
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.subinfo {
+    padding: 0 1rem;
+}
+
+/* Se il gioco è disponibile, mostra un tick */
+.tick::before {
+    content: "\2713";
+    color: #25de57;
+}
+
+/* Se il gioco non è disponibile, mostra una croce */
+.cross::before {
+    content: "\00D7";
+    color: #e51f3d;
+}
+
+.amount {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.original-amount {
+    text-decoration: line-through;
+}
+
+.discount-amount {
+    color: var(--orange);
+}
+
+.current-amount {
+    font-weight: bold;
+}
+
+.free-to-play {
+    color: #3591db;
+    background-color: #3b568f;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+/* Bottoni di acquisto e aggiunta al carrello */
+.actions {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.actions > a {
+    flex-basis: 10%; /* size iniziale del flex item */
+}
+
+.actions > button {
+    flex-basis: 85%;
+}
+
+/* Spazio che intercorre tra una sezione e l'altra */
+.game-separator {
+    height: 60px;
+}
+
+.details {
+    width: 100%;
+    color: white;
+    text-align: left;
+    min-height: inherit;
+}
+
+/* Intestazione della sezione */
+.headline {
+    margin-bottom: 2rem;
+}
+
+.details-content > iframe {
+    border-radius: 10px;
+    width: 100%;
+    min-height: 92.5vh;
+}
+
+.details-content > p {
+    color: var(--light-grey);
+    line-height: 3rem;
+}
+
+/* RECENSIONI */
+
+.no-review-container, .game-rating {
+    width: 100%;
+    background-color: var(--header-bg);
+    border-radius: 10px;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.review-container {
+    margin-top: 5rem;
+    width: 100%;
+    min-height: 50.5vh;
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.33% - 30px));
+    grid-template-rows: auto;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    position: relative;
+}
+
+.btn-container {
+    width: 100%;
+    text-align: center;
+}
+
+/* Card della review */
+.review {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--header-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    color: var(--grey);
+}
+
+.review-header,
+.review-body,
+.review-footer {
+    width: 100%;
+}
+
+.review-header {
+    position: relative;
+}
+
+.user-banner {
+    margin-right: 2rem;
+}
+/* Immagine profilo dell'utente nella recensione*/
+.user-banner > img {
+    max-width: 10%;
+    object-fit: contain;
+    aspect-ratio: 1;
+    border-radius: 5px;
+}
+
+/* Colore delle icone */
+.fa-star::before,
+.fa-star-half::before {
+    color: #f8b024;
+}
+
+/* Stelle della recensione */
+.review-stars {
+    font-size: calc(0.6rem + 1vmin);
+    display: inline;
+    justify-self: flex-start;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Testo della recensione */
+.review-body {
+    margin: 2rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review-body > p {
+    text-align: left;
+}
+
+.review > hr {
+    width: 100%;
+    height: 1px;
+    color: var(--grey);
+    background-color: var(--grey);
+    margin: 2rem 0;
+}
+
+.rating-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+/* Colore per il voto medio delle recensioni sul gioco */
+.good-rating {
+    color: #6dd432;
+    border-color: #6dd432;
+}
+
+.mid-rating {
+    color: #fcaf02;
+    border-color: #fcaf02;
+}
+
+.bad-rating {
+    color: #e22b26;
+    border-color: #e22b26;
+}
+
+.rating {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid;
+}
+
+/* Card dove mostra: "Valuta questo gioco?" */
+.review-card-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review-card-actions > .btn {
+    flex-basis: 49%;
+}
+
+.review-btn {
+    flex-basis: 45%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .actions { /*carrello acquista*/
+        width: 90%;
+    }
+
+    .subinfos { /*disponibile...*/
+        width: 50%;
+    }
+
+    .amount { /*prezzi*/
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .actions {
+        width: 100%;
+    }
+
+    .review-container {
+        grid-template-columns: repeat(2, calc(50%)); /*2 recensioni*/
+    }
+
+    .actions > button {
+        flex-basis: 80%; /*aumenta larghezza btn*/
+    }
+
+    .subinfos {
+        width: 60%;
+    }
+
+    .amount {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .btn-container { /*margine per separare dalle recensioni*/
+        margin-top: 4rem;
+    }
+
+    .game-rating, .no-review-container { /*valuta, ecc...*/
+        padding: 2rem 0;
+    }
+
+    .subinfos {
+        width: 70%; /*disponibile*/
+    }
+
+    .amount {
+        width: 60%;
+    }
+
+    .details-content > iframe {
+        min-height: 55vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .review-container {
+        grid-template-columns: 1fr;
+    }
+
+    .subinfos {
+        width: 80%;
+    }
+
+    .amount {
+        width: 70%;
+    }
+
+    .actions > button {
+        flex-basis: 70%;
+    }
+
+    .details-content > iframe {
+        min-height: 45vh;
+    }
+
+    .free-to-play {
+        padding: 0.5rem 1rem;
+    }
+}

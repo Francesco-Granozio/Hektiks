@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>Controller.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>Controller.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CarrelloServlet</servlet-name>
+        <servlet-class>Controller.CarrelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarrelloServlet</servlet-name>
+        <url-pattern>/carrello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GiocoServlet</servlet-name>
+        <servlet-class>Controller.GiocoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GiocoServlet</servlet-name>
+        <url-pattern>/gioco</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AcquistoServlet</servlet-name>
+        <servlet-class>Controller.AcquistoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AcquistoServlet</servlet-name>
+        <url-pattern>/acquisto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RecensioneServlet</servlet-name>
+        <servlet-class>Controller.RecensioneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecensioneServlet</servlet-name>
+        <url-pattern>/recensione</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>Controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GiftCardServlet</servlet-name>
+        <servlet-class>Controller.GiftCardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GiftCardServlet</servlet-name>
+        <url-pattern>/giftcard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UtenteServlet</servlet-name>
+        <servlet-class>Controller.UtenteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UtenteServlet</servlet-name>
+        <url-pattern>/utente</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>Controller.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ErrorHandlerServlet</servlet-name>
+        <servlet-class>Controller.ErrorHandlerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorHandlerServlet</servlet-name>
+        <url-pattern>/ErrorHandlerServlet</url-pattern>
+    </servlet-mapping>
+
+<!--  Errori -->
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorHandlerServlet</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/ErrorHandlerServlet</location>
+    </error-page>
+
+
+    <!-- File statici: css, js, immagini -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/assets/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

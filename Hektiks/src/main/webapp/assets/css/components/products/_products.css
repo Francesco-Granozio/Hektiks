@@ -1,0 +1,221 @@
+.products-container {
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.products-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.show-all-btn {
+    text-align: center;
+    background-color: var(--dark-grey);
+    padding: 1rem;
+    border-radius: 35px;
+    transition: background-color 500ms ease;
+}
+
+.show-all-btn:hover {
+    background-color: var(--orange);
+}
+
+.products-content {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.33% - 30px));
+    grid-template-rows: auto;
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+/* card dei giochi */
+.card {
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-header {
+    width: 100%;
+    height: 85%;
+    border-radius: inherit;
+    position: relative;
+    transition: transform 500ms ease;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+}
+
+/* sconto arancione in basso a sinistra sulla card */
+.discount {
+    z-index: 2;
+    color: white;
+    background-color: var(--orange);
+    font-weight: 700;
+    width: fit-content;
+    padding: 0.4rem;
+    border-radius: 8px 8px 0;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+/* "scivolo" dello sconto */
+.discount::after {
+    transform: skewX(16deg);
+    width: 100%;
+    border-radius: 10px 5px;
+    content: "";
+    position: absolute;
+    background-color: var(--orange);
+    top: 0;
+    bottom: 0;
+    right: -4px;
+    z-index: -1;
+}
+
+.card-body {
+    color: white;
+    margin-top: 0.65rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* titolo del gioco */
+.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 1rem;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.card-header:hover {
+    transform: scale(1.03);
+}
+
+/* separa giochi del momento da top sellers */
+.separator {
+    width: 100%;
+    background-color: var(--footer-bg);
+    min-height: 10vh;
+    padding: 4rem;
+    margin: 4rem 0;
+}
+
+.separator-content {
+    display: flex;
+    width: 70%;
+    min-height: inherit;
+    margin: auto;
+}
+
+/* Download veloce, Supporto clienti, ecc...*/
+.feature-card {
+    flex-basis: 33.33%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--light-grey);
+    justify-content: center;
+}
+
+.feature-card:nth-child(3) {
+    border-right: none;
+}
+
+.feature-card > img {
+    max-width: 30%;
+    object-fit: contain;
+    aspect-ratio: 16 / 9;
+}
+
+.feature-text {
+    color: white;
+}
+
+.feature-text > p {
+    color: var(--light-grey);
+}
+
+@media only screen and (max-width: 1200px) {
+    #telegram-separator .separator-content > img {
+        max-width: 6%; /* icona telegram */
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .products-content {
+        grid-template-columns: repeat(2, calc(50%)); /*da 3 a 2 colonne*/
+    }
+
+    .feature-card {
+        padding-left: 2rem; /*super veloce, ecc...*/
+    }
+
+    .card-body {
+        width: 100%;
+        position: relative;
+    }
+
+    .price {
+        position: absolute;
+        right: 0;
+        top: 85%;
+        transform: translateY(-110%); /* ^ prezzo sulla copertina*/
+    }
+
+    .name {
+        display: none; /*titolo*/
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .feature-card:nth-child(1) { /*prima feature card*/
+        display: none;
+    }
+
+    .feature-card {
+        flex-basis: 50%; /*da 33.33 - 33.33 - 33.33 a 50 - 50*/
+    }
+
+    .feature-card > img {
+        max-width: 35%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .products-content {  /*1 colonna*/
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card:nth-child(2) { /*seconda feature card*/
+        display: none;
+    }
+
+    .feature-card {
+        flex-basis: 100%; /*da 50 - 50 a 100%*/
+    }
+
+    .feature-card > img {
+        max-width: 25%;
+    }
+}

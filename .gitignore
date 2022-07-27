@@ -1,0 +1,13 @@
+*.pdf
+*.iml
+*.zip
+/Documenti/
+/.idea
+/.vscode
+/.idea/*
+/target/
+/build/
+/.idea/
+/META-INF/context.xml
+/META-INF/
+/META-INF/*
